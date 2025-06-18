@@ -2,7 +2,7 @@
 
 _______________________
 
-The NIDS (Network Intrusion Detection System) is a tool built prmiarily with C++, along with Snort for a rule based threat detection. It capture and analyze network packets, detect intrusions using rule-based detection, and provide real-time monitoring capabilities through a modern web interface.
+NIDS (Network Intrusion Detection System) is a tool built prmiarily with C++, along with Snort for a rule based threat detection. It capture and analyze network packets, detect intrusions using rule-based detection, and provide real-time monitoring capabilities through a modern web interface.
 
 
 _What can this tool do?_
