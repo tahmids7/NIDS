@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TahmidS NIDS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add moment.js for time formatting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Tahmid's Network Intrusion Detection System (NIDS)</h1>
+            <div class="system-status">
+                <div class="status-indicator">
+                    <div id="status-light" class="status-light"></div>
+                    <span id="status-text">Status: Checking...</span>
+                </div>
+                <div class="mode-indicator">
+                    <span id="mode-text">Mode: Unknown</span>
+                </div>
+                <div class="session-indicator">
+                    <span id="session-text">Session: Tracking from page load</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="dashboard-row">
+                <div class="dashboard-column">
+                    <div class="dashboard-card">
+                        <h2>Alert Statistics</h2>
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <div class="stat-label">Total Alerts</div>
+                                <div id="total-alerts" class="stat-value">0</div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="attack-type-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-column">
+                    <div class="dashboard-card">
+                        <h2>Top Attackers</h2>
+                        <div id="top-sources-container" class="ip-list-container">
+                            <table id="top-sources" class="ip-table">
+                                <thead>
+                                    <tr>
+                                        <th>Source IP</th>
+                                        <th>Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="2">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <h2>Top Targets</h2>
+                        <div id="top-targets-container" class="ip-list-container">
+                            <table id="top-targets" class="ip-table">
+                                <thead>
+                                    <tr>
+                                        <th>Target IP</th>
+                                        <th>Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="2">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-row">
+                <div class="dashboard-card full-width">
+                    <h2>Recent Alerts</h2>
+                    <div class="alerts-container">
+                        <table id="alerts-table" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Alert ID</th>
+                                    <th>Message</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Protocol</th>
+                                    <th>Severity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="7">Loading alerts...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>Tahmid's Network Intrusion Detection System Dashboard | Last Updated: <span id="last-update">--</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Socket.io client -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Dashboard JavaScript -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
